@@ -1,3 +1,21 @@
-<div cdkDropList (cdkDropListDropped)="drop($event)">
-    <div *ngFor="let item of items" cdkDrag>{{item}}</div>
+<app-nav></app-nav>
+
+<div cdkDropList (cdkDropListDropped)="drop($event, items)" >
+    <div *ngFor="let item of items" cdkDrag >{{item}}</div>
+</div>
+
+<button cdkDrag ></button>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+  </mat-button-toggle-group>
+  
+<app-dashboard></app-dashboard>
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event, movies)">
+    @for (movie of movies; track movie) {
+      <div class="example-box" cdkDrag>{{movie}}</div>
+    }
   </div>
